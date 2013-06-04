@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Movies>
+  <Movie>
+    <Id>101</Id>
+    <Title>Title - 11</Title>
+    <Price>101</Price>
+    <Category>1</Category>
+  </Movie>
+  <Movie>
+    <Id>102</Id>
+    <Title>Title - 17</Title>
+    <Price>120</Price>
+    <Category>2</Category>
+  </Movie>
+  <Movie>
+    <Id>103</Id>
+    <Title>Title - 13</Title>
+    <Price>170</Price>
+    <Category>1</Category>
+  </Movie>
+  <Movie>
+    <Id>103</Id>
+    <Title>Title - 19</Title>
+    <Price>130</Price>
+    <Category>2</Category>
+  </Movie>
+  <Movie>
+    <Id>105</Id>
+    <Title>Title - 12</Title>
+    <Price>160</Price>
+    <Category>1</Category>
+  </Movie>
+</Movies>

@@ -1,0 +1,12 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>New Product</h2>
+<form action="/Products/Save" method="post">
+<div><label for="txtName">Name :</label><input type="text" id="txtName" name="Name" value="" /></div>
+    <div><label for="txtName">Cost :</label><input type="text" id="txtCost" name="Cost" value="" /></div>
+    <input type="submit" name="submit" value="Submit" />
+    </form>

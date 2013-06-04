@@ -133,11 +133,46 @@ namespace RentalReport
         bool IsSatisfiedBy(Movie movie);
     }
 
+    public class OrSpecification : IMovieSpecification
+    {
+        private readonly IMovieSpecification _left;
+        private readonly IMovieSpecification _right;
+
+        public OrSpecification(IMovieSpecification left, IMovieSpecification right)
+        {
+            _left = left;
+            _right = right;
+        }
+
+        public bool IsSatisfiedBy(Movie movie)
+        {
+            return _left.IsSatisfiedBy(movie) || _right.IsSatisfiedBy(movie);
+        }
+    }
+
+
+
     public delegate bool IsSatisfiedByDelegate(Movie movie);
+
+    public class InverseSpecification : IMovieSpecification
+    {
+        private readonly IMovieSpecification _specification;
+
+        public InverseSpecification(IMovieSpecification specification)
+        {
+            _specification = specification;
+        }
+
+        public bool IsSatisfiedBy(Movie movie)
+        {
+            return !_specification.IsSatisfiedBy(movie);
+        }
+    }
 
     public class MovieSpecificationByPriceCode : IMovieSpecification
     {
         private readonly int _priceCode;
+        private readonly bool _inverse;
 
         public MovieSpecificationByPriceCode(int priceCode)
         {

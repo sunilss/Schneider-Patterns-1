@@ -41,6 +41,9 @@ namespace RentalReport
             var moviesWithPriceCode1 = movies.Filter(new MovieSpecificationByPriceCode(1));
             PrintMovies(moviesWithPriceCode1,"Movies with price code = 1");
 
+            var moviesWithoutPriceCode1 = movies.Filter(new InverseSpecification(new MovieSpecificationByPriceCode(1)));
+            PrintMovies(moviesWithoutPriceCode1, "Movies except price code = 1");
+
             IsSatisfiedByDelegate moviesWithIdGT15 = (m) => m.Id > 15;
             PrintMovies(movies.Filter(moviesWithIdGT15),"Movies with ID > 15");
             Console.ReadLine();

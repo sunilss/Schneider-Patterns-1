@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+	<title>Products List</title>
+</head>
+<body>
+    <h1>Products List </h1>
+    <ul>
+        @foreach (var product in Model)
+        {
+            <li>@product.Name</li>
+        }
+    </ul>
+    <a href="/Products/New">New</a>
+</body>
+</html>
